@@ -1,0 +1,62 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+//font-face
+// @font-face{
+//   font-family:Shrikhand;
+//   src:url('../assets/fonts/Roberto.woff2');
+// }
+
+// *{
+//   font-family:Shrikhand;
+// }
+
+
+//change tabs top active color
+.tabs-md[tabsHighlight="true"] .tab-highlight {
+    // background-color: #fe770a;
+    // background-color:#472F8F;
+    background-color:#FEC817;
+}
+
+.checkbox-ios .checkbox-checked {
+  border-color: $checkbox-ios-icon-border-color-on;
+  background-color: $checkbox-ios-background-color-on;
+}
+
+
+
+
+// iOS Checkbox Inner Checkmark: Checked
+// -----------------------------------------
+
+.checkbox-ios .checkbox-checked .checkbox-inner {
+  position: absolute;
+  top: 10px;
+  left: 13px;
+
+  width: 10px;
+  height: 15px;
+
+  border-width: $checkbox-ios-icon-checkmark-width;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-style: $checkbox-ios-icon-checkmark-style;
+  border-color: $checkbox-ios-icon-checkmark-color;
+  transform: rotate(45deg);
+}

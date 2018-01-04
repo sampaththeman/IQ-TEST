@@ -1,0 +1,184 @@
+  <ion-header >
+    <ion-navbar color="snowwhite">
+      <ion-title  *ngIf="!isOn" class="custom-title" >
+          <img src="../../assets/imgs/icons/snap-inner.png" alt="SNAP APP"/>
+      </ion-title>
+<!--      <ion-searchbar (ionInput)="getItems1($event)" *ngIf="isOn"></ion-searchbar>
+     <ion-buttons right>
+     <button ion-button icon-only (click)="toggleDetails()"  ><ion-icon ios="ios-search" md="md-search"></ion-icon>
+     </button>
+   </ion-buttons>  -->
+
+<!--        <ion-buttons right>
+          <button ion-button icon-only>
+              <ion-badge >{{CartBadgeCount}}</ion-badge>
+              <ion-icon name="cart"></ion-icon>
+          </button>
+      </ion-buttons>    -->
+  </ion-navbar>
+  <ion-toolbar color='snowwhite' class="custom-toolbar">
+    <ion-searchbar (input)="getItems1($event)"  (ionCancel)="onCancel($event)" class="custom-searchbar"></ion-searchbar>
+  </ion-toolbar>
+
+      <ion-toolbar no-border class="scrollable-segments custom-scrollable-segments" color="snowwhite">
+
+        <ion-row class="filters ">
+            <ion-col class="col-with-arrow" (click)="slidePrev()" no-padding col-1>
+                <ion-icon *ngIf="showLeftButton" name="arrow-back"></ion-icon>
+            </ion-col>
+            <ion-col no-padding col-10 class="custom-filter">
+                <ion-slides  (ionSlideDidChange)="slideChanged()"  slidesPerView="3">
+
+                <ion-slide  (click)="filterData('Food and Drink')" class="custom-filter-menu">
+                <p [class.selected]="CatID==='Food and Drink'">
+                    <span><img src="../../assets/imgs/icons/food.png" alt="Food and Drink"/></span>
+                    <span>Food and Drink </span>
+                </p >
+                </ion-slide >
+                  <ion-slide (click)="filterData('Home Care')" class="custom-filter-menu">
+                <p [class.selected]="CatID==='Home Care'">
+                    <span><img src="../../assets/imgs/icons/homecare.png" alt="Home Care"/></span>
+                    <span>Home Care </span>
+                </p>
+                </ion-slide>
+                  <ion-slide  (click)="filterData('Personal Care')" class="custom-filter-menu">
+                <p [class.selected]="CatID==='Personal Care'">
+                    <span><img src="../../assets/imgs/icons/personal.png" alt="Personal Care"/></span>
+                    <span>Personal Care </span>
+                </p>
+                </ion-slide>
+                <ion-slide (click)="filterData('Canned')" class="custom-filter-menu">
+                <p [class.selected]="CatID==='Canned'">
+                    <span><img src="../../assets/imgs/icons/canned.png" alt="Canned"/></span>
+                    <span>Canned</span>
+                </p>
+                </ion-slide>
+
+                <!--    <ion-slide (click)="filterData(category.id)" *ngFor="let category of categories">
+                        <p [class.selected]="selectedCategory?.id === category.id">{{ category.name }}</p>
+                    </ion-slide> -->
+                </ion-slides>
+            </ion-col>
+            <ion-col class="col-with-arrow" (click)="slideNext()" no-padding col-1>
+                <ion-icon *ngIf="showRightButton" name="arrow-forward"></ion-icon>
+            </ion-col>
+        </ion-row>
+  </ion-toolbar>
+  </ion-header>
+
+
+<ion-content fullscreen >
+
+<!-- 
+<ion-slides  *ngIf="ImageArray && ImageArray.length" autoplay="5000" loop="true" speed="500" class="slider" pager="true" >
+      <ion-slide *ngFor="let Image of ImageArray">
+         <img src="{{Image.image}}" alt="Product Image">
+      </ion-slide>
+ </ion-slides>
+
+    <ion-item-divider ion-item  no-lines color="iqcolor" >
+    Latest Items
+    <ion-icon item-right name="logo-buffer"></ion-icon>
+  </ion-item-divider>
+
+ -->
+<ion-list  *ngFor="let item of Categories;let idx = index" class="custom-item-list" >
+
+
+    <ion-item text-wrap  [class.active]="item.selected === true" class="custom-item-block">
+        <span class="custom-item-block-img">
+            <ion-thumbnail item-left (click)="SinglePage(item)" >
+                <img src="http://snap.iqmedialabs.com/timthumb.php?w=300&src=http://snap.iqmedialabs.com/{{item.itmimgpath[0]}}" alt="" />
+            </ion-thumbnail>
+        </span>
+        <span class="custom-item-details">
+              <h2 class="custom-item-h2"> {{ item.itmname| slice:0:30}} </h2>
+              <p>
+                <span [innerHTML]="item.description.substr(0, 70) + '...'"></span>
+              </p>
+              <p class="custom-price-tag" color="fedex_secondry">
+                  LKR  <span [innerHTML]="item.itmprice">  </span>
+              </p>
+              <ion-grid class="custom-grid">
+                   <ion-row class="custom-add-item-row">
+                       <ion-col class="custom-add-item-col">
+                        <ion-icon ios="ios-remove" md="md-remove" style="zoom:1.4;margin: 5px 12px 5px 0;" (click)="setDecrement(item)" ></ion-icon>
+                       </ion-col>
+                        <ion-col class="custom-add-item-col bordered">
+                            <p style="font-size: 100%;font-weight: bolder;margin:14px"> {{item.qty}} </p>
+                        </ion-col>
+                        <ion-col class="custom-add-item-col">
+                            <ion-icon ios="ios-add" md="md-add" style="zoom:1.4;margin: 5px 0 5px 12px;"  (click)="setIncrement(item)"></ion-icon>
+                        </ion-col>
+                        <ion-col class="custom-add-item-col">
+                            <ion-item [class.active]="item.selected === true" >
+                              <ion-checkbox item-left color="dark" mode="ios"  (ionChange)="notify($event,item)" checked="false"></ion-checkbox>
+                            </ion-item>
+                        </ion-col>
+                  </ion-row>
+              </ion-grid>
+        </span>
+
+
+
+
+
+    </ion-item>
+
+
+
+
+<!--   <ion-item  text-wrap left>
+    <ion-row left   style="flex-wrap:wrap">
+      <ion-col width-10 [class.active]="item.selected === true" >
+        <ion-item no-line  [class.active]="item.selected === true" >
+    <article class="card " [class.active]="item.selected === true" >
+    <div class="card__right">
+    <div class="card__sale-flag">{{ item.itmname| slice:0:30}}</div>
+    <h2 class="card__name"></h2>
+    <div class="card__price">Rs {{ item.itmprice}}</div>
+
+
+    <p class="card__info">
+      {{ item.description| slice:0:50}}
+    </p>
+
+
+  <div class="flex_row">
+    <ion-icon ios="ios-remove" md="md-remove" style="zoom:1.1;margin: 5px 12px 5px 0;" (click)="setDecrement(item)" ></ion-icon>
+    <p style="font-size: 105%;;font-weight: bolder;"> {{item.qty}} </p>
+    <ion-list></ion-list>
+    <ion-icon ios="ios-add" md="md-add" style="zoom:1.1;margin: 5px 0 5px 12px;"  (click)="setIncrement(item)"></ion-icon>
+  </div>
+    </div>
+    <div class="card__left"> 
+      <div class="card__image">
+        <img src="{{ item.itmimgpath}}" alt="" />
+      </div>
+    </div>
+
+
+  </article>
+        </ion-item>
+      </ion-col>
+      <ion-col col-2 [class.active]="item.selected === true"  >
+        <ion-item no-line [class.active]="item.selected === true" >
+          <ion-checkbox item-left style="margin: 70px 8px 9px -10px;" color="dark" mode="ios"  (ionChange)="notify($event,item)" checked="false"></ion-checkbox>
+        </ion-item>
+       </ion-col>
+     </ion-row>
+      </ion-item > -->
+  </ion-list>
+ 
+<ion-fab right bottom >
+    <button   [class.hide]="!buttonClicked" (click)="navigateTolistPage()"  ion-fab color="royal"><ion-icon name="md-add"></ion-icon></button>
+  </ion-fab>
+  <ion-row>
+
+  <ion-list class="no-padding">
+
+  </ion-list>
+
+  </ion-row>
+
+  </ion-content>

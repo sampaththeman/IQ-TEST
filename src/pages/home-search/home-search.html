@@ -1,0 +1,64 @@
+<!--
+  Generated template for the HomeSearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="iqcolor">
+    <ion-title></ion-title>
+ <ion-searchbar (ionInput)="getItems1($event)" animated="true"></ion-searchbar>
+  </ion-navbar>
+<!--    <ion-toolbar color='iqcolor'  no-border>
+    <ion-searchbar (input)="getItems1($event)"  (ionCancel)="onCancel($event)"></ion-searchbar>
+  </ion-toolbar> -->
+
+</ion-header>
+
+
+<ion-content >
+
+<ion-list  *ngFor="let item of Categories;let idx = index"  >
+
+
+    <ion-item text-wrap  [class.active]="item.selected === true">
+      <ion-thumbnail item-left (click)="SinglePage(item)">
+    <img src="http://snap.iqmedialabs.com/timthumb.php?w=300&src=http://snap.iqmedialabs.com/{{item.itmimgpath[0]}}" alt="" />
+      </ion-thumbnail>
+
+      <h2> {{ item.itmname| slice:0:30}} </h2>
+
+      <p>
+        <span [innerHTML]="item.description.substr(0, 70) + '...'"></span>
+      </p>
+      <p>
+        Price:  <span [innerHTML]="item.itmprice">  </span>  LKR
+      </p>
+
+     <ion-grid>
+  <ion-row>
+   <ion-col>
+    <ion-icon ios="ios-remove" md="md-remove" style="zoom:1.4;margin: 5px 12px 5px 0;" (click)="setDecrement(item)" ></ion-icon>
+  </ion-col>
+    <ion-col>
+    <p style="font-size: 100%;font-weight: bolder;margin:14px"> {{item.qty}} </p>
+    </ion-col>
+    <ion-col>
+    <ion-icon ios="ios-add" md="md-add" style="zoom:1.4;margin: 5px 0 5px 12px;"  (click)="setIncrement(item)"></ion-icon>
+    </ion-col>
+    <ion-col>
+     <ion-item [class.active]="item.selected === true" >
+          <ion-checkbox item-left color="dark" mode="ios"  (ionChange)="notify($event,item)" checked="false"></ion-checkbox>
+        </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+    </ion-item>
+</ion-list>
+
+<ion-fab right bottom >
+    <button   [class.hide]="!buttonClicked" (click)="navigateTolistPage()"  ion-fab color="royal"><ion-icon name="md-add"></ion-icon></button>
+  </ion-fab>
+
+</ion-content>

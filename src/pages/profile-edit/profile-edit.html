@@ -1,0 +1,98 @@
+<ion-header>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <ion-navbar color="iqcolor">
+    <ion-title>
+      Profile 
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    
+   
+      <div id="profile-bg"></div>
+      <div id="content">
+        <div id="profile-info" (click)="takePicture()">
+          <img id="profile-image" src="{{editableImg}}">
+          <h3 id="profile-name">Sampath Dissanayake</h3>
+          <span id="profile-description"> Developer from <a href="https://twitter.com/sampaththem">@prismdevteam</a> 
+            <a href=""></a></span>
+        </div>
+        <ion-list>
+
+
+
+
+
+        <div class="row">
+
+          <div class="col col-50">
+        <ion-item >
+            <inline-editor type="text" [(ngModel)]="editableFName" (onSave)="saveEditable($event)" name="editableText1" size="15"></inline-editor>
+        </ion-item>
+
+          </div>
+          <div class="col col-50">
+                           <ion-item >
+            <inline-editor type="text" [(ngModel)]="editableLName" (onSave)="saveEditable($event)" name="editableText2" size="15"></inline-editor>
+        </ion-item>
+
+          </div>
+        </div>
+
+        <div class="row" >
+          <div class="col col-50">
+          <ion-item >
+         <ion-label color="primary">Gender</ion-label>
+         <ion-select [(ngModel)]="editableGender">
+         <ion-option value="F">Female</ion-option>
+         <ion-option value="M">Male</ion-option>
+       </ion-select>
+     </ion-item>
+          </div>
+            <div class="col col-50">
+            </div>
+        
+   </div>
+
+        <div class="row">
+         <ion-item >
+            <inline-editor type="text" [(ngModel)]="editablestreet" (onSave)="saveEditable($event)" name="editableText3" size="30"></inline-editor>
+       </ion-item>
+
+        </div>
+
+        <div class="row">
+        <ion-item >
+            <inline-editor type="text" [(ngModel)]="editableAddress" (onSave)="saveEditable($event)" name="editableText3" size="15"></inline-editor>
+        </ion-item>
+        </div>
+
+        <div class="row">
+        <ion-item >
+      <inline-editor type="text" [(ngModel)]="editableTown" (onSave)="saveEditable($event)" name="editableText4" size="15"></inline-editor>
+        </ion-item>
+        </div>
+
+
+              <div class="row">
+        <ion-item >
+      <inline-editor type="number" [(ngModel)]="editablePhone" (onSave)="saveEditable($event)" name="editableText5" size="10"></inline-editor>
+        </ion-item>
+        </div>
+
+
+
+    
+
+
+        </ion-list>
+      </div>
+    
+
+
+</ion-content>

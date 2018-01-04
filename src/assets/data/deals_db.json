@@ -1,0 +1,33 @@
+{
+  "products":[
+    {
+      "id": 1,
+      "code": "CHOC4LIFE",
+      "description": "Lindt Excellence 70% Cocoa Chocolate Diamonds 60ct Box with Lancaster for $10.26",
+      "name": "50% OFF Lindt",
+      "expiration_date": "05/01/2016",
+      "picture": "https://www.keellssuper.com/ItemImages/Big/Pic27256.jpg"
+    }, {
+      "id": 2,
+      "code": "20LIGHT25",
+      "description": "20% off Landscape Lighting and 25% off Outdoor Wall Light Fixtures with Coupon Code",
+      "name": "20% OFF Landscape Lighting",
+      "expiration_date": "07/07/2016",
+      "picture": "https://www.keellssuper.com/ItemImages/Big/Pic15345.jpg"
+    }, {
+      "id": 3,
+      "code": "MORETVPLZ3",
+      "description": "Starz HD free trial extended for 3 months, in time for the new seasons of your favourite shows",
+      "name": "3 Months FREE (Trial)",
+      "expiration_date": "09/08/2016",
+      "picture": "https://www.keellssuper.com/ItemImages/Big/Pic95756.jpg"
+    }, {
+      "id": 4,
+      "code": "GETTHATPHONE212",
+      "description": "Free 4 Month Notevault Subscription With Cat® Phones worth $578",
+      "name": "CAT Limited Time Offer",
+      "expiration_date": "04/30/2016",
+      "picture": "https://www.keellssuper.com/ItemImages/Big/Pic97590.jpg"
+    }
+  ]
+}

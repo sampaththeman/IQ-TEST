@@ -1,0 +1,538 @@
+page-details {
+
+//Flex row for item increase Elements
+  .flex_row {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row; 
+    flex-direction: row;
+  }
+
+
+
+
+//=============================
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding: 20px;
+  font-family: sans-serif;
+  background: #201925;
+}
+
+.product-card {
+  width: 312px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.primary-details, .secondary-details {
+  flex: 1 1 50%;
+}
+
+.secondary-details {
+  text-align: right;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+span[class$="price-was"] {
+  text-decoration: line-through;
+  color: #b3b3b3;
+}
+
+span[class$="price-now"] {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+span[class^="product-"] {
+  width: 100%;
+  display: block;
+}
+
+.product-name {
+  font-weight: bold;
+}
+
+.product-sku {
+  font-size: 12px;
+  color: #b3b3b3;
+  margin-top: 10px;
+}
+
+.product-card img {
+  width: 100%;
+}
+
+.bottom {
+  padding: 0px 16px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+a.btn-add {
+  background: #47cf73;
+  padding: 16px;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+a.btn-add:hover {
+  background: #49bf70;
+}
+
+@media (min-width: 320px){
+  body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 20px;
+    font-family: sans-serif;
+    background: #201925;
+  }
+
+  .product-card {
+    width: 270px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .primary-details, .secondary-details {
+    flex: 1 1 50%;
+  }
+
+  .secondary-details {
+    text-align: right;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+
+  span[class$="price-was"] {
+    text-decoration: line-through;
+    color: #b3b3b3;
+  }
+
+  span[class$="price-now"] {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  span[class^="product-"] {
+    width: 100%;
+    display: block;
+  }
+
+  .product-name {
+    font-weight: bold;
+  }
+
+  .product-sku {
+    font-size: 12px;
+    color: #b3b3b3;
+    margin-top: 10px;
+  }
+
+  .product-card img {
+    width: 100%;
+  }
+
+  .bottom {
+    padding: 0px 16px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  a.btn-add {
+    background: #47cf73;
+    padding: 16px;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+  }
+
+  a.btn-add:hover {
+    background: #49bf70;
+  }
+}
+
+
+
+@media (min-width: 370px){
+  body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 20px;
+    font-family: sans-serif;
+    background: #201925;
+  }
+
+  .product-card {
+    width: 320px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .primary-details, .secondary-details {
+    flex: 1 1 50%;
+  }
+
+  .secondary-details {
+    text-align: right;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+
+  span[class$="price-was"] {
+    text-decoration: line-through;
+    color: #b3b3b3;
+  }
+
+  span[class$="price-now"] {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  span[class^="product-"] {
+    width: 100%;
+    display: block;
+  }
+
+  .product-name {
+    font-weight: bold;
+  }
+
+  .product-sku {
+    font-size: 12px;
+    color: #b3b3b3;
+    margin-top: 10px;
+  }
+
+  .product-card img {
+    width: 100%;
+  }
+
+  .bottom {
+    padding: 0px 16px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  a.btn-add {
+    background: #47cf73;
+    padding: 16px;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+  }
+
+  a.btn-add:hover {
+    background: #49bf70;
+  }
+}
+
+
+@media (min-width: 360px){
+  body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 20px;
+    font-family: sans-serif;
+    background: #201925;
+  }
+
+  .product-card {
+    width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .primary-details, .secondary-details {
+    flex: 1 1 50%;
+  }
+
+  .secondary-details {
+    text-align: right;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+
+  span[class$="price-was"] {
+    text-decoration: line-through;
+    color: #b3b3b3;
+  }
+
+  span[class$="price-now"] {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  span[class^="product-"] {
+    width: 100%;
+    display: block;
+  }
+
+  .product-name {
+    font-weight: bold;
+  }
+
+  .product-sku {
+    font-size: 12px;
+    color: #b3b3b3;
+    margin-top: 10px;
+  }
+
+  .product-card img {
+    width: 100%;
+  }
+
+  .bottom {
+    padding: 0px 16px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  a.btn-add {
+    background: #47cf73;
+    padding: 16px;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+  }
+
+  a.btn-add:hover {
+    background: #49bf70;
+  }
+}
+
+
+
+@media (min-width: 400px){
+  body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 20px;
+    font-family: sans-serif;
+    background: #201925;
+  }
+
+  .product-card {
+    width: 360px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .primary-details, .secondary-details {
+    flex: 1 1 50%;
+  }
+
+  .secondary-details {
+    text-align: right;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+
+  span[class$="price-was"] {
+    text-decoration: line-through;
+    color: #b3b3b3;
+  }
+
+  span[class$="price-now"] {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  span[class^="product-"] {
+    width: 100%;
+    display: block;
+  }
+
+  .product-name {
+    font-weight: bold;
+  }
+
+  .product-sku {
+    font-size: 12px;
+    color: #b3b3b3;
+    margin-top: 10px;
+  }
+
+  .product-card img {
+    width: 100%;
+  }
+
+  .bottom {
+    padding: 0px 16px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  a.btn-add {
+    background: #47cf73;
+    padding: 16px;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+  }
+
+  a.btn-add:hover {
+    background: #49bf70;
+  }
+}
+
+
+@media (min-width: 768px){
+  body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 20px;
+    font-family: sans-serif;
+    background: #201925;
+  }
+
+  .product-card {
+    width: 710px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .primary-details, .secondary-details {
+    flex: 1 1 50%;
+  }
+
+  .secondary-details {
+    text-align: right;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+
+  span[class$="price-was"] {
+    text-decoration: line-through;
+    color: #b3b3b3;
+  }
+
+  span[class$="price-now"] {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  span[class^="product-"] {
+    width: 100%;
+    display: block;
+  }
+
+  .product-name {
+    font-weight: bold;
+  }
+
+  .product-sku {
+    font-size: 12px;
+    color: #b3b3b3;
+    margin-top: 10px;
+  }
+
+  .product-card img {
+    width: 100%;
+  }
+
+  .bottom {
+    padding: 0px 16px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  a.btn-add {
+    background: #47cf73;
+    padding: 16px;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+  }
+
+  a.btn-add:hover {
+    background: #49bf70;
+  }
+}
+
+//New Module
+
+.icons {
+  background-color: #fff;
+  border: 1px solid #7f8c8d;
+  color: #7f8c8d;
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.name {
+  margin: 0;
+}
+
+.handle {
+  margin: 0;
+}
+
+.status {
+  white-space: normal;
+  color: #000;
+  margin-top: 5px;
+}
+
+.item {
+  align-items: baseline;
+}
+
+.button-container {
+  align-self: flex-end;
+  text-align: right;
+}
+
+
+
+
+
+
+
+}

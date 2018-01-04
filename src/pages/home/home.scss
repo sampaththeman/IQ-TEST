@@ -1,0 +1,147 @@
+
+//page home slider for ios
+.ios{
+ page-home {
+  .slider{
+    height:189px;
+    margin-top:-22px;
+  }
+
+}
+}
+
+
+//page home slider for android  
+
+page-home {
+  .slider{
+    height:180px;
+  }
+
+
+
+
+
+
+// New Box Items 
+
+.container{
+  margin: auto;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  text-align: center;
+}
+.box{
+  flex: 1;
+  width: 30%;
+  float: left;
+  border-radius: 12px;
+  margin: 1.66%;
+  min-height: 60px;
+  background: #fbfbfb85;
+  display: inline-block;
+  box-shadow: 0 10px 12px rgba(0,0,0, .4);
+}
+@media (max-width: 425px){
+  .box{
+    flex: 1;
+    width: 30%;
+    float: left;
+    border-radius: 12px;
+    margin: 1.66%;
+    min-height: 60px;
+    background: #fbfbfb85;
+    display: inline-block;
+    box-shadow: 0 10px 12px rgba(0,0,0, .4);
+
+  }
+}
+
+
+
+
+
+
+
+}
+
+.ios, .md {
+ 
+  page-home {
+
+
+
+    ion-scroll[scrollX] {
+    white-space: nowrap;
+    height: 120px;
+    overflow: hidden;
+
+    .scroll-item {
+      display: inline-block;
+    }
+
+    .selectable-icon{
+      margin: 10px 20px 10px 20px;
+      color: red;
+      font-size: 100px;
+    }
+
+    ion-avatar img{
+      margin: 10px;
+    }
+  }
+
+  ion-scroll[scroll-avatar]{
+    height: 60px;
+  }
+
+  /* Hide ion-content scrollbar */
+  ::-webkit-scrollbar{
+    display:none;
+  }
+   
+    ion-item {
+      width: 92%;
+      margin: 4%;
+      padding-left: 10px !important;
+      margin-bottom: 10px;
+      background-color: #fff;
+      opacity: 0.7;
+      font-size: 0.9em;
+      transition: 0.2s linear;
+    }
+
+    ion-scroll[scrollX] {
+      white-space: nowrap;
+      height: 120px;
+      overflow: hidden;
+
+      .scroll-item {
+        display: inline-block;
+      }
+
+      .selectable-icon{
+        margin: 10px 20px 10px 20px;
+        color: red;
+        font-size: 100px;
+      }
+
+      ion-avatar img{
+        margin: 10px;
+      }
+    }
+
+    ion-scroll[scroll-avatar]{
+      height: 60px;
+    }
+
+    /* Hide ion-content scrollbar */
+    ::-webkit-scrollbar{
+      display:none;
+    }
+    
+  }
+  
+}
+
+

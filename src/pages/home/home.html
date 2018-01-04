@@ -1,0 +1,90 @@
+<ion-header>
+<!-- <expandable-header [scrollArea]="mycontent" headerHeight="56"> -->
+<ion-navbar  hideBackButton color="snowwhite" >
+
+<!-- <ion-title *ngIf="!isOn">SNAP APP </ion-title> -->
+
+
+
+<!-- <ion-title> SNAP APP </ion-title> -->
+
+<!-- <ion-searchbar (ionInput)="getItems1($event)" *ngIf="isOn" animated="true"></ion-searchbar>
+<ion-buttons right>
+<button ion-button icon-only (click)="toggleDetails()"  ><ion-icon ios="ios-search" md="md-search"></ion-icon>
+</button>
+</ion-buttons>   -->  
+
+  <ion-title  class="custom-title" >
+    <img src="../../assets/imgs/icons/snap-inner.png" alt="SNAP APP"/>
+  </ion-title>
+  <!--<ion-title class="custom-title"> SNAP APP </ion-title>-->
+</ion-navbar>
+<ion-toolbar color='snowwhite' class="custom-toolbar">
+<ion-searchbar (click)="search_page()" (input)="getItems1($event)"  (ionCancel)="onCancel($event)" class="custom-searchbar"></ion-searchbar>
+</ion-toolbar>
+<!-- </expandable-header> -->
+</ion-header>
+<ion-content fullscreen >
+
+<ion-slides *ngIf="ImageArray && ImageArray.length"  autoplay="5000" loop="true" speed="500" class="slider" pager="true">
+<ion-slide *ngFor="let Image of ImageArray" class="custom-slide">
+<img src="{{Image.image}}" alt="Product Image">
+</ion-slide>
+</ion-slides>
+
+<ion-item-divider ion-item  no-lines color="snowwhite" class="custom-h2">
+My Pics
+<!--<ion-icon item-right name="heart"></ion-icon>-->
+</ion-item-divider>
+<ion-row>
+
+    <ion-row reorder="true" color="snowwhite" class="custom-basket-row">
+<ion-col col-12  [dragula]='"first-bag"' (longPress)="onLongPress($event)">
+<button *ngFor="let item of ShopItems"   class="box custom-basket-box" (click)="Listitem(item)">
+<img *ngIf="item.group_items.length >1" src="assets/imgs/baskets/basket-1.jpg" class="custom-basket-img"/>
+<img *ngIf="item.group_items.length ==1" src="http://snap.iqmedialabs.com/timthumb.php?w=300&src=http://snap.iqmedialabs.com/{{item.group_items[0].picture[0]}}"/>
+  <span class="custom-basket-name">{{item.group_items[0].group_name}}</span>
+</button>
+</ion-col>
+</ion-row>
+  </ion-row>
+
+
+<ion-row>
+    <ion-item no-lines>
+    <ion-scroll scrollX="true" scroll-avatar>
+        <ion-avatar>
+          <img src="assets/imgs/atomix_user31.png" class="scroll-item" (click)="loadAvatar()"/>
+             <img src="assets/imgs/atomix_user31.png" class="scroll-item" (click)="loadAvatar1()"/>
+                <img src="assets/imgs/atomix_user31.png" class="scroll-item" (click)="loadAvatar2()"/>
+                   <img src="assets/imgs/atomix_user31.png" class="scroll-item" (click)="loadAvatar3()"/>
+                    <img src="assets/imgs/atomix_user31.png" class="scroll-item" (click)="loadAvatar3()"/>
+                     <img src="assets/imgs/atomix_user31.png" class="scroll-item" (click)="loadAvatar3()"/>
+                      <img src="assets/imgs/atomix_user31.png" class="scroll-item" (click)="loadAvatar3()"/>
+                       <img src="assets/imgs/atomix_user31.png" class="scroll-item" (click)="loadAvatar3()"/>
+        </ion-avatar>
+    </ion-scroll>
+    </ion-item>
+  </ion-row>
+
+
+
+<ion-item-divider ion-item  no-lines color="snowwhite" class="custom-h2" >
+Snap suggestions 
+
+</ion-item-divider>
+
+<ion-row reorder="true" class="custom-row">
+<ion-col col-12 class="custom-item-col">
+<button *ngFor="let item of SuggestionArray"   class="box custom-item-box" (click)="navigate_offer(item)">
+  <span class="custom-item-span">
+    <img src="http://snap.iqmedialabs.com/timthumb.php?w=300&src=http://snap.iqmedialabs.com/{{item.itmimgpath[0]}}"/>
+  </span>
+  <span class="custom-item-tag">{{item.itmname}}</span>
+
+</button>
+</ion-col>
+</ion-row>
+
+
+</ion-content>

@@ -1,0 +1,59 @@
+<ion-content>
+ 
+  <div padding [@flyInBottomFast]="cloudState" id="cloud-layer" class="custom-page-padding">
+ 
+    <ion-row>
+      <ion-col>
+        <img [@flyInBottomSlow]="logoState" src="assets/imgs/snap.png" />
+      </ion-col>
+    </ion-row>
+ 
+    <ion-row>
+      <ion-col>
+        <ion-list inset [@bounceInBottom]="formState" class="custom-padding-ion-list">
+
+ 
+          <ion-item class="login-input">
+            <ion-label class="c-user-label"><ion-icon name="person"></ion-icon></ion-label>
+            <ion-input [(ngModel)]="username" type="text"></ion-input>
+          </ion-item>
+ 
+          <ion-item class="login-input">
+            <ion-label class="c-user-label"> <ion-icon name="lock"></ion-icon></ion-label>
+            <ion-input [(ngModel)]="password" type="password" class="custom-password"></ion-input>
+          </ion-item>
+ 
+        </ion-list>
+      </ion-col>
+    </ion-row>
+ 
+    <ion-row>
+      <ion-col class="custom-col-padding">
+        <button ion-button class="login-button custom-login-button" [@fadeIn]="loginState" (click)="login()">Login</button>
+            <p class="custom-social-login-title">
+                <span>or login using</span>
+            </p>
+
+
+<div class="row">
+      <div class="col col-50">
+<button ion-button  icon-start class="facebook-button custom-social-button custom-right" [@fadeIn]="loginState"  (click)="fbAuth()" ></button>
+      </div>
+      <div class="col col-50">
+<button ion-button icon-start class="google-button custom-social-button custom-left" [@fadeIn]="loginState" ></button>
+
+      </div>
+ </div>
+          <button ion-button class="login-button custom-signup-button" [@fadeIn]="registerState" (click)="register()">Don't have an account? Sign Up</button>
+
+      </ion-col>
+
+    </ion-row>
+ 
+  </div>
+
+
+
+
+ 
+</ion-content>

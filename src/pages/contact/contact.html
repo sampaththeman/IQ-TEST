@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="iqcolor">
+    <ion-title>
+      Profile 
+    </ion-title>
+    <ion-buttons right>
+    <button ion-button icon-only (click)="presentPopover($event)">
+      <ion-icon ios="ios-more" md="md-more"></ion-icon>
+    </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+      <div id="profile-bg"></div>
+      <div id="content">
+        <div id="profile-info">
+  <!--         <img id="profile-image" src="https://pbs.twimg.com/profile_images/832764726937579520/5xzNG8jN_400x400.jpg"> -->
+          <img id="profile-image" src="{{user_pic}}"  onError="this.src='assets/imgs/atomix_user31.png'" >
+          <h3 id="profile-name">{{user_name}}</h3>
+          <span id="profile-description"> Developer from <a href="https://twitter.com/sampaththeman">@prismdevteam </a> 
+            <a href=""></a></span>
+        </div>
+
+        <ion-list >      
+        <ion-item-divider color="light">Account</ion-item-divider>
+<ion-list >
+  <ion-item  (click)="access_orderAwaiting()">Orders Awaiting Shipments<ion-icon name="arrow-dropright" item-right></ion-icon></ion-item>
+  <ion-item (click)="leaveFeedback()">Leave Feedback<ion-icon name="arrow-dropright" item-right></ion-icon></ion-item>
+</ion-list>
+
+<ion-item-divider color="light">Password</ion-item-divider>
+<ion-list >
+  <ion-item  (click)="updatePassword()">Change Password  <ion-icon ios="ios-build" md="md-build" item-left ></ion-icon></ion-item>
+</ion-list>
+
+ <ion-item-divider color="light"></ion-item-divider>
+ <ion-list >
+   <ion-item (click)="logout()">Logout<ion-icon ios="ios-log-out" md="md-log-out" item-left></ion-icon></ion-item>
+  
+</ion-list>
+
+</ion-list>
+      </div>
+    
+</ion-content>

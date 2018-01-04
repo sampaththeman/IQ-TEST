@@ -1,0 +1,119 @@
+<!--
+  Generated template for the OfferLoadPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+<ion-navbar>
+<ion-title>{{item.itmname}}</ion-title>
+</ion-navbar>
+
+</ion-header>
+
+
+<ion-content fullscreen>
+<ion-card>
+<ion-slides *ngIf="item.itmimgpath && item.itmimgpath.length" autoplay="3000" loop="true">
+<ion-slide *ngFor="let image of item.itmimgpath">
+<img src="http://snap.iqmedialabs.com/timthumb.php?w=300&src=http://snap.iqmedialabs.com/{{image}}" alt="" />
+</ion-slide>
+</ion-slides>
+
+<ion-card-content>
+<ion-card-title>
+{{item.itmname}} &nbsp;
+
+</ion-card-title>
+
+<p [innerHTML]="item.description"></p>
+
+
+</ion-card-content>
+
+
+</ion-card>
+
+<ion-card >
+<ion-card-content>
+<ion-card-title>
+Specifications
+</ion-card-title>
+
+<ion-grid>
+<ion-row >
+<ion-col col-4>
+NAME
+</ion-col>
+<ion-col col-8>
+<span > Features</span>
+</ion-col>
+</ion-row>
+</ion-grid>
+<ion-grid>
+<ion-row>
+<ion-col col-2>
+<ion-icon ios="ios-remove" md="md-remove" style="zoom:1.1;margin: 5px 12px 5px 0;" (click)="setDecrement(item);" ></ion-icon>
+</ion-col>
+<ion-col col-2>
+<p style="font-size: 105%;;font-weight: bolder;"> {{item.qty}} </p>
+</ion-col>
+<ion-col col-2>
+<ion-icon ios="ios-add" md="md-add" style="zoom:1.1;margin: 5px 0 5px 12px;"  (click)="setIncrement(item);"></ion-icon>
+</ion-col>
+<ion-col col-2>
+<button ion-button round outline (click)="notify($event,item)">ADD TO CART</button>
+</ion-col>
+
+</ion-row>
+</ion-grid>
+
+
+
+
+
+</ion-card-content>
+</ion-card>
+
+<ion-card >
+<ion-card-content>
+<ion-card-title>
+Reviews
+</ion-card-title>
+
+<ion-grid>
+<ion-row >
+<ion-col col-4>
+<b>Name</b><br/>
+<span >
+	<ion-icon style="color: #d4af37" small name="star"></ion-icon>
+</span>
+<span >
+	<ion-icon style="color: #d4af37" small name="star"></ion-icon>
+</span>
+<span >
+	<ion-icon style="color: #d4af37" small name="star"></ion-icon>
+</span>
+<span >
+	<ion-icon style="color: #d4af37" small name="star"></ion-icon>
+</span>
+<span >
+	<ion-icon style="color: #d4af37" small name="star"></ion-icon>
+</span>
+
+</ion-col>
+
+
+</ion-row>
+</ion-grid>
+</ion-card-content>
+</ion-card>
+
+ 
+<ion-fab right bottom >
+    <button   [class.hide]="!buttonClicked" (click)="navigateTolistPage()"  ion-fab color="royal"><ion-icon name="md-add"></ion-icon></button>
+  </ion-fab>
+
+
+</ion-content>

@@ -1,0 +1,23 @@
+Ionic Framework: 3.7.1
+Ionic App Scripts: 3.0.0
+Angular Core: 4.4.3
+Angular Compiler CLI: 4.4.3
+Node: 6.9.5
+OS Platform: Windows 8.1
+Navigator Platform: Win32
+User Agent: Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Mobile Safari/537.36
+
+Start new ionic project using ionic start myApp tabs command in terminal
+Press Y for the message 
+"Looks like a fresh checkout! No ./node_modules directory found. Would you like to install project dependencies?"
+
+
+install node modules using  following commands in termnial
+
+npm install @angular/animations@latest --save
+
+install android keyboard plugin  using following command
+
+ionic cordova plugin add ionic-plugin-keyboard
+npm install --save @ionic-native/keyboard
+

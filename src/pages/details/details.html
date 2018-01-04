@@ -1,0 +1,134 @@
+<!--
+  Generated template for the DetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+<ion-navbar color="iqcolor">
+<ion-title>{{item.group_items[0].group_name}}</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-card *ngIf="item.group_items.length === 1">
+<div class="product-card">
+  <div class="top">
+    <ion-slides *ngIf="item && item.group_items[0].picture.length" autoplay="3000" loop="true">
+    <ion-slide *ngFor="let image of item.group_items[0].picture">
+    <img src="http://snap.iqmedialabs.com/timthumb.php?w=300&src=http://snap.iqmedialabs.com/{{image}}" alt="" />
+  </ion-slide>
+</ion-slides>
+<!--     <img src="{{item.group_items[0].picture}}" /> -->
+  </div>
+  <div class="bottom">
+    <p class="primary-details">
+      <span class="product-name">{{item.group_items[0].name}}</span>
+      <span class="product-sku">{{item.group_items[0].description | slice:0:100}}</span>
+    </p>
+    <p class="secondary-details">
+      <span class="product-price-was">£199</span>
+      <span class="product-price-now">{{item.group_items[0].itemprice}}</span>
+    </p>
+  </div>
+
+
+  <div class="row">
+    <div class="col col-50">
+      <button ion-button icon-only clear (click)="addtoList(item);removeItem(item);" class="like-btn"><ion-icon ios="ios-heart" color="{{ like_btn.color }}" class="like-btn"  md="md-heart"></ion-icon></button>
+    </div>
+    <div class="col col-50">
+      <div class="flex_row">
+        <ion-icon ios="ios-remove" md="md-remove" style="zoom:1.1;margin: 5px 12px 5px 0;" (click)="setDecrementSingle(item);" ></ion-icon>
+        <p style="font-size: 105%;;font-weight: bolder;"> {{item.group_items[0].qty}} </p>
+        <ion-list></ion-list>
+        <ion-icon ios="ios-add" md="md-add" style="zoom:1.1;margin: 5px 0 5px 12px;"  (click)="setIncrementSingle(item);"></ion-icon>
+      </div>
+
+    </div>
+  </div>
+
+<!--   <button ion-button icon-only clear (click)="sendPurchaseRequest(item)"> <ion-icon ios="ios-cart"  color="iqcolor" md="md-cart"></ion-icon>
+</button> -->
+
+<a class="btn-add"  (click)="sendPurchaseRequest(item)">Add to Bag</a>
+
+</div>
+
+
+
+
+</ion-card>
+
+<ion-list *ngIf="item.group_items.length > 1 ">
+
+<accordian *ngFor="let item of Chapter" [title]="item.name| slice:0:30">
+
+
+  <ion-row class="header">
+  <ion-col col-3>
+  <ion-slides *ngIf="item && item.picture.length" autoplay="3000" loop="true">
+    <ion-slide *ngFor="let image of item.picture">
+    <img src="http://snap.iqmedialabs.com/timthumb.php?w=300&src=http://snap.iqmedialabs.com/{{image}}" alt="" />
+  </ion-slide>
+</ion-slides>
+<!--   <img src="{{item.picture}}"> -->
+</ion-col>
+<ion-col col-9 class="button-container">
+</ion-col>
+</ion-row>
+
+<ion-row>
+<ion-col col-12>
+<h4 class="name">{{item.name| slice:0:30}}</h4>
+
+<p>{{item.description}}</p>
+</ion-col>
+</ion-row>
+
+<ion-row>
+<ion-col col-3>
+<ion-icon name="ios-pricetag-outline"></ion-icon>  <strong> {{item.itemprice}} </strong>
+</ion-col>
+<ion-col col-9>
+<ion-icon name="ios-code-download-outline"></ion-icon>   <strong>   {{item.code}}</strong> 
+</ion-col>
+</ion-row>
+
+<ion-row>
+<ion-col col-4>
+<button ion-button icon-only clear item-end color="danger"  (click)="removeBulkItems(item)" ><ion-icon ios="ios-heart" md="md-heart"></ion-icon></button>
+</ion-col>
+<ion-col col-8>
+
+<div class="flex_row">
+  <ion-icon ios="ios-remove" md="md-remove" style="zoom:1.1;margin: 5px 12px 5px 0;" (click)="setDecrement(item);setItemQtyByIndex(item)" ></ion-icon>
+  <p style="font-size: 105%;;font-weight: bolder;"> {{item.qty}} </p>
+  <ion-list></ion-list>
+  <ion-icon ios="ios-add" md="md-add" style="zoom:1.1;margin: 5px 0 5px 12px;"  (click)="setIncrement(item);setItemQtyByIndex(item);"></ion-icon>
+</div>
+</ion-col>
+</ion-row>
+</accordian>
+</ion-list>
+
+
+<div class="row" *ngIf="item.group_items.length > 1 ">
+  <div class="col col-50">
+    <button ion-button block icon-right color="light" (click)="removegroup()">
+      <ion-icon name="ios-trash-outline"></ion-icon>
+      &nbsp; Delete
+    </button>
+  </div>
+  <div class="col col-50">
+   <button ion-button block icon-right color="iqcolor" (click)="sendBulkPurchaseRequest()">
+    <ion-icon name="cash"></ion-icon>
+    &nbsp;Buy
+  </button>
+</div>
+</div>
+
+
+
+</ion-content>

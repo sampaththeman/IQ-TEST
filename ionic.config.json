@@ -1,0 +1,8 @@
+{
+  "name": "Grocery",
+  "app_id": "d2ed10f4",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
